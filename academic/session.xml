@@ -31,9 +31,9 @@
             <field name="arch" type="xml">
                 <form string="Session">
                     <header>
-                        <button string="Confirm" type="object" name="action_open" states="draft" />
-                        <button string="Mark as Done" type="object" name="action_done" states="open" />
-                        <button string="Reset to Draft" type="object" name="action_draft" states="open,done" />
+                        <button string="Confirm" type="object" name="action_open" states="draft" groups="academic.group_academic_user" />
+                        <button string="Mark as Done" type="object" name="action_done" states="open" groups="academic.group_academic_manager" />
+                        <button string="Reset to Draft" type="object" name="action_draft" states="open,done" groups="academic.group_academic_manager" />
                         
                         <field name="state" widget="statusbar" />
                     </header>
@@ -41,31 +41,31 @@
                     <div class="oe_title">
                         <label for='name' class="oe_edit_only" string="Session Name" />
                         <h1>
-                            <field name="name" />
+                            <field name="name" attrs="{'readonly':[('state','!=','draft')]}" />
                         </h1>
                     </div>
 
                     <group> 
                     <!-- kolom kiri -->
                         <group>
-                            <field name="course_id" />
-                            <field name="instructor_id" domain="['|','|',('is_instructor','=',True),('category_id','=','Instruktur'),('category_id','=','Trainer')]" />
-                            <field name="start_date" />
-                            <field name="image_small" widget="image" class="oe_avatar" />
+                            <field name="course_id" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="instructor_id" domain="['|','|',('is_instructor','=',True),('category_id','=','Instruktur'),('category_id','=','Trainer')]" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="start_date" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="image_small" widget="image" class="oe_avatar" attrs="{'readonly':[('state','!=','draft')]}" />
                         </group>
 
                     <!-- kolom kanan -->
                         <group>
-                            <field name="duration" />
-                            <field name="seats" />
+                            <field name="duration" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="seats" attrs="{'readonly':[('state','!=','draft')]}" />
                             <field name="taken_seats" widget="progressbar" />
-                            <field name="active" />
+                            <field name="active" attrs="{'readonly':[('state','!=','draft')]}" />
                         </group>
                     </group>
 
                     <notebook>
                         <page string="Attendees">
-                            <field name="attendee_ids">
+                            <field name="attendee_ids" attrs="{'readonly':[('state','!=','draft')]}">
                                 <tree>
                                     <field name="name" />
                                     <field name="session_id" />
