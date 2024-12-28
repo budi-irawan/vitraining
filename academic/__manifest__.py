@@ -1,7 +1,7 @@
 {
-    "name":"Academic Information System v1.0",
+    "name":"Sistem Informasi Akademik V1.0",
     "version":"1.0",
-    "depends": ["base"],
+    "depends": ["base","board"],
     "author":"Budi Irawan",
     "category":"Education",
     "website":"https://bootcamp.vitraining.com",
@@ -14,7 +14,9 @@
         "session.xml",
         "attendee.xml",
         "partner.xml",
-        "wizard/create_attendee.xml"
+        "wizard/create_attendee.xml",
+        "reports/session.xml",
+        "dashboard.xml"
     ],
     "installable":True,
     "auto_install":False,

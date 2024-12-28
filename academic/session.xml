@@ -46,7 +46,6 @@
                     </div>
 
                     <group> 
-                    <!-- kolom kiri -->
                         <group>
                             <field name="course_id" attrs="{'readonly':[('state','!=','draft')]}" />
                             <field name="instructor_id" domain="['|','|',('is_instructor','=',True),('category_id','=','Instruktur'),('category_id','=','Trainer')]" attrs="{'readonly':[('state','!=','draft')]}" />
@@ -54,7 +53,6 @@
                             <field name="image_small" widget="image" class="oe_avatar" attrs="{'readonly':[('state','!=','draft')]}" />
                         </group>
 
-                    <!-- kolom kanan -->
                         <group>
                             <field name="duration" attrs="{'readonly':[('state','!=','draft')]}" />
                             <field name="seats" attrs="{'readonly':[('state','!=','draft')]}" />
@@ -150,22 +148,24 @@
             <field name="arch" type="xml">
                 <field name="id" />
                 <kanban default_group_by="course_id">
-                    <templates>
+                    <template>
                         <t t-name="kanban-box">
                             <div class="oe_kanban_vignette">
-                                <div class="oe_kanban_details">
-                                    <img t-att-src="kanban_image('academic.session','image_small',record.id.raw_value)" class="o_kanban_image" />
-                                    <h4>
-                                        <a type="open"><field name="name" /></a>
-                                    </h4>
-                                    <ul>
-                                        <li>Seats: <field name="seats" /></li>
-                                        <li>Taken Seats: <field name="taken_seats" /></li>
-                                    </ul>
-                                </div>
+                                <a type="open">
+                                    <div class="oe_kanban_details">
+                                        <img t-att-src="kanban_image('academic.session','image_small',record.id.raw_value)" class="o_kanban_image" />
+                                        <h4>
+                                            <field name="name" />
+                                        </h4>
+                                        <ul>
+                                            <li>Seats: <field name="seats" /></li>
+                                            <li>Taken Seats: <field name="taken_seats" /></li>
+                                        </ul>
+                                    </div>
+                                </a>
                             </div>
                         </t>
-                    </templates>
+                    </template>
                 </kanban>
             </field>
         </record>

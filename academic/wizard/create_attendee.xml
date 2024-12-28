@@ -13,10 +13,11 @@
                         <field name="partner_ids" />
                     </group>
                     <footer>
-                        <button type="special" string="Cancel" special="cancel" icon="fa-times" />
+                        <button type="special" string="Cancel" class="btn btn-secondary" special="cancel" icon="fa-times" />
                         <button 
                             type="object" 
                             string="Confirm" 
+                            class="btn btn-primary"
                             name="action_add_attendee" 
                             icon="fa-check-circle"
                             confirm="Are you sure to add attendees to this session?" />

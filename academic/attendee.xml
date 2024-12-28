@@ -10,6 +10,7 @@
                     <field name="name" />
                     <field name="session_id" />
                     <field name="partner_id" />
+                    <field name="course_id" />
                 </tree>
             </field>
         </record>
