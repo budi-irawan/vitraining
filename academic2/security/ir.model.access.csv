@@ -1,0 +1,10 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_user_vit_course,access_user_vit_course,model_vit_course,academic2.group_academic2_user,1,0,0,0
+access_manager_vit_course,access_manager_vit_course,model_vit_course,academic2.group_academic2_manager,1,1,1,1
+access_admin_vit_course,access_admin_vit_course,model_vit_course,base.group_system,1,1,1,1
+access_user_vit_user,access_user_vit_user,model_vit_user,academic2.group_academic2_user,1,0,0,0
+access_manager_vit_user,access_manager_vit_user,model_vit_user,academic2.group_academic2_manager,1,1,1,1
+access_admin_vit_user,access_admin_vit_user,model_vit_user,base.group_system,1,1,1,1
+access_user_vit_session,access_user_vit_session,model_vit_session,academic2.group_academic2_user,1,0,0,0
+access_manager_vit_session,access_manager_vit_session,model_vit_session,academic2.group_academic2_manager,1,1,1,1
+access_admin_vit_session,access_admin_vit_session,model_vit_session,base.group_system,1,1,1,1

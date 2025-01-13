@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- tree view -->
+        <!--record id="view_session_tree" model="ir.ui.view">
+            <field name="name">session_tree</field>
+            <field name="model">vit.session</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="academic2.view_vit_session_tree"/>
+            <field name="arch" type="xml">
+            </field>
+        </record-->
+        <!-- form view -->
+        <!-- record id="view_session_form" model="ir.ui.view">
+            <field name="name">session_form</field>
+            <field name="model">vit.session</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="academic2.view_vit_session_form"/>
+            <field name="arch" type="xml">
+            </field>
+        </record-->
+        <!-- search -->
+        <!--record id="view_session_search" model="ir.ui.view">
+            <field name="name">session</field>
+            <field name="model">vit.session</field>
+            <field name="inherit_id" ref="academic2.view_vit_session_search"/>
+            <field name="arch" type="xml">
+            </field>
+        </record-->
+        <!-- action window -->
+        <record id="academic2.action_session" model="ir.actions.act_window">
+            <field name="name">Session</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vit.session</field>
+            <field name="view_mode">tree,form,kanban,pivot,calendar,graph</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Click to add a new Session
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+        <menuitem active="1" id="academic2.menu_session" name="Session" parent="academic2.academic2_config_menu" action="academic2.action_session" sequence="40"/>
+    </data>
+</odoo>

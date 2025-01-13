@@ -1,0 +1,7 @@
+<odoo>
+	<data>
+		<menuitem id="academic2_top_menu" name="Academic2" sequence="20" web_icon="academic2,static/description/icon.png" />
+		<menuitem id="academic2_sub_menu" name="Operations" sequence="40" parent="academic2_top_menu" />
+		<menuitem id="academic2_config_menu" name="Configurations" sequence="1000" parent="academic2_top_menu" />
+	</data>
+</odoo>

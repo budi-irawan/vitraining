@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- tree view -->
+        <!--record id="view_course_tree" model="ir.ui.view">
+            <field name="name">course_tree</field>
+            <field name="model">vit.course</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="academic2.view_vit_course_tree"/>
+            <field name="arch" type="xml">
+            </field>
+        </record-->
+        <!-- form view -->
+        <!-- record id="view_course_form" model="ir.ui.view">
+            <field name="name">course_form</field>
+            <field name="model">vit.course</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="academic2.view_vit_course_form"/>
+            <field name="arch" type="xml">
+            </field>
+        </record-->
+        <!-- search -->
+        <!--record id="view_course_search" model="ir.ui.view">
+            <field name="name">course</field>
+            <field name="model">vit.course</field>
+            <field name="inherit_id" ref="academic2.view_vit_course_search"/>
+            <field name="arch" type="xml">
+            </field>
+        </record-->
+        <!-- action window -->
+        <record id="academic2.action_course" model="ir.actions.act_window">
+            <field name="name">Course</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vit.course</field>
+            <field name="view_mode">tree,form,kanban,pivot</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                Click to add a new Course
+                </p><p>
+
+                </p>
+            </field>
+        </record>
+
+        <menuitem active="1" id="academic2.menu_course" name="Course" parent="academic2.academic2_config_menu" action="academic2.action_course" sequence="20"/>
+    </data>
+</odoo>

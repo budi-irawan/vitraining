@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* academic2
+# 
+# Translators:
+# vit_odoogen
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-16 09:00+0000\n"
+"PO-Revision-Date: 2022-09-22 05:44+0000\n"
+"Last-Translator: vit_odoogen, 2023\n"
+"Language-Team: Bahasa Indonesia (https://www.transifex.com/odoo/teams/41243/af/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: id\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+#. module: vit.course
+#. odoo-python
+#: code:addons/academic2/models/vit.course.py:0
+#, python-format
+# model:ir.model.fields,field_description:name
+msgid "Name"
+msgstr "Name"
+
+# model:ir.model.fields,field_description:description
+msgid "Description"
+msgstr "Description"
+
+
+#. module: vit.user
+#. odoo-python
+#: code:addons/academic2/models/vit.user.py:0
+#, python-format
+# model:ir.model.fields,field_description:Attribute1
+msgid "Attribute1"
+msgstr "Attribute1"
+
+
+#. module: vit.session
+#. odoo-python
+#: code:addons/academic2/models/vit.session.py:0
+#, python-format
+# model:ir.model.fields,field_description:name
+msgid "Name"
+msgstr "Name"
+
+# model:ir.model.fields,field_description:description
+msgid "Description"
+msgstr "Description"
+
+# model:ir.model.fields,field_description:start_date
+msgid "Start Date"
+msgstr "Start Date"
+
+# model:ir.model.fields,field_description:duration
+msgid "Duration"
+msgstr "Duration"
+

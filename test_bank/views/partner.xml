@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="partner_bank_account">
+            <field name="name">partner_bank_account</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Bank Accounts">
+                        <field name="bank_account_ids">
+                            <tree>
+                                <field name="acc_number"/>
+                                <field name="partner_id"/>
+                                <field name="bank_name"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>
