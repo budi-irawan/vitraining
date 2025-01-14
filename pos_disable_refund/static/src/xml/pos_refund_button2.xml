@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template id="template" inherit_id="point_of_sale.template" xml:space="preserve">
+    <t t-inherit="point_of_sale.TicketScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@class='subpads']" position="replace">
+            <t t-if="env and env.pos and env.pos.config and env.pos.disable_refund_button" style="display: flex; width: 100%;">
+                <ActionpadWidget partner="getSelectedPartner()" actionName="constructor.numpadActionName" actionToTrigger="'do-refund'" isActionButtonHighlighted="getHasItemsToRefund()" />
+                <NumpadWidget disabledModes="['price', 'discount']" activeMode="_selectedOrderlineId and 'quantity'" disableSign="true" />
+            </t>
+            <t t-else="">
+                <t t-inherit="point_of_sale.ActionpadWidget" owl="1">
+                    <div class="actionpad">
+                        <button class="button set-partner" t-att-class="{'decentered': isLongName}" t-on-click="() => this.trigger('click-partner')">
+                            <t t-if="!env.isMobile"><i class="fa fa-user" role="img" aria-label="Customer" title="Customer" /></t>
+                            <t t-if="props.partner">
+                                <t t-esc="props.partner.name" />
+                            </t>
+                            <t t-else="">
+                                Customer
+                            </t>
+                        </button>
+                        <button t-if="env.isMobile" class="button back-button" t-on-click="props.onSwitchPane">
+                            <i class="fa fa-angle-double-left"/>
+                            Back
+                        </button>
+                    </div>
+                </t>
+                <!-- <ActionpadWidget partner="getSelectedPartner()" /> -->
+                <NumpadWidget disabledModes="['price', 'discount']" activeMode="_selectedOrderlineId and 'quantity'" disableSign="true" />
+            </t>
+        </xpath>
+    </t>
+</template>

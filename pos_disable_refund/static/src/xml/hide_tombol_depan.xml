@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template id="template" inherit_id="point_of_sale.template" xml:space="preserve">
+    <t t-inherit="point_of_sale.ProductScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@class='pads']" position="replace">
+            <div class="control-buttons">
+                <t t-if="env.isMobile and controlButtons.length > 3">
+                    <div class="control-button" t-on-click="_displayAllControlPopup">More...</div>
+                </t>
+                <t t-else="">
+                    <t t-foreach="controlButtons" t-as="cb" t-key="cb.name">
+                        <t t-if="env and env.pos and env.pos.config and env.pos.disable_refund_button">
+                            <t t-component="cb.component" t-key="cb.name"/>
+                        </t>
+                        <t t-else="">
+                            <t t-if="cb.name != 'RefundButton'">
+                                <t t-component="cb.component" t-key="cb.name"/>
+                            </t>
+                        </t>
+                    </t>
+                </t>
+            </div>
+            <div class="subpads">
+                <ActionpadWidget partner="partner" actionName="constructor.numpadActionName" onSwitchPane.bind="switchPane" />
+                <NumpadWidget activeMode="env.pos.numpadMode" />
+            </div>
+        </xpath>
+    </t>
+</template>

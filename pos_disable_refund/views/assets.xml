@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="assets" inherit_id="point_of_sale.template">
+            <xpath expr="." position="replace">
+                <script type="text/javascript" src="./pos_disable_refund/static/src/js/pos_refund_button.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template id="template" inherit_id="point_of_sale.template" xml:space="preserve">
+    <t t-inherit="point_of_sale.ActionpadWidget" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@class='actionpad']" position="replace">
+            <button class="button set-partner" t-att-class="{'decentered': isLongName}"
+                    t-on-click="() => this.trigger('click-partner')">
+                <t t-if="!env.isMobile"><i class="fa fa-user" role="img" aria-label="Customer" title="Customer" /></t>
+                <t t-if="props.partner">
+                    <t t-esc="props.partner.name" />
+                </t>
+                <t t-else="">
+                    Customer
+                </t>
+            </button>
+            <button t-if="env.isMobile" class="button back-button" t-on-click="props.onSwitchPane">
+                <i class="fa fa-angle-double-left"/>
+                Back
+            </button>
+        </xpath>
+    </t>
+</template>
