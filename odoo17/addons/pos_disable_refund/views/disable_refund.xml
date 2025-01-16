@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="pos_order_view_form" model="ir.ui.view">
+            <field name="name">pos_order_view_form</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='row mt16 o_settings_container'][2]//setting[3]" position="after">
+                    <setting id="disable_refund_button" string="Refund Button" help="Pilih ini jika ingin mengaktifkan tombol refund">
+                        <field name="disable_refund_button"/>
+                    </setting>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

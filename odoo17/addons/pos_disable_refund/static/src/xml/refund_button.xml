@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template id="template" inherit_id="point_of_sale.template" xml:space="preserve">
+    <t t-component="pos_disable_refund.DisableRefund" t-name="pos_disable_refund.DisableRefund" t-inherit="point_of_sale.ProductScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@class='control-buttons d-flex flex-wrap border-bottom overflow-hidden bg-300']" position="replace">
+            <div class="control-buttons d-flex flex-wrap border-bottom overflow-hidden bg-300" t-if="!ui.isSmall">
+                <t t-foreach="controlButtons" t-as="cb" t-key="cb.name">
+                    <t t-if="env.disable_refund_button">
+                        <t t-component="cb.component" t-key="cb.name"/>
+                    </t>
+                    <t t-else="">
+                        <t t-if="cb.name != 'RefundButton'">
+                            <t t-component="cb.component" t-key="cb.name"/>
+                        </t>
+                    </t>
+                </t>
+            </div>
+        </xpath>
+    </t>
+</template>
+
