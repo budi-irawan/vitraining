@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="dashboard" model="ir.actions.client">
+            <field name="name">Dashboard POSQ</field>
+            <field name="tag">pos_customer_restrict.dashboard</field>
+        </record>
+    </data>
+</odoo>
