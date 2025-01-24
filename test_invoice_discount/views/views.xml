@@ -1,0 +1,63 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_move_form2">
+      <field name="name">account.move.form - fixed_discount</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_form" />
+      <field name="arch" type="xml">
+      <!-- tree -->
+        <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="before">
+          <field name="discount_fixed" optional="show" />
+        </xpath>
+
+      <!-- form -->
+        <xpath expr="//field[@name='invoice_line_ids']/form/sheet/group/field[@name='discount']" position="before">
+          <field name="discount_fixed" />
+        </xpath>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="test_invoice_discount.action_window">
+      <field name="name">test_invoice_discount window</field>
+      <field name="res_model">test_invoice_discount.test_invoice_discount</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="test_invoice_discount.action_server">
+      <field name="name">test_invoice_discount server</field>
+      <field name="model_id" ref="model_test_invoice_discount_test_invoice_discount"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="test_invoice_discount" id="test_invoice_discount.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="test_invoice_discount.menu_1" parent="test_invoice_discount.menu_root"/>
+    <menuitem name="Menu 2" id="test_invoice_discount.menu_2" parent="test_invoice_discount.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="test_invoice_discount.menu_1_list" parent="test_invoice_discount.menu_1"
+              action="test_invoice_discount.action_window"/>
+    <menuitem name="Server to list" id="test_invoice_discount" parent="test_invoice_discount.menu_2"
+              action="test_invoice_discount.action_server"/>
+-->
+  </data>
+</odoo>
